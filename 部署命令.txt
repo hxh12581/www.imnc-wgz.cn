@@ -1,0 +1,25 @@
+1. find / -name activate  #查找Python虚拟环境路径
+
+2. ps aux |grep uwsgi #查看uwsgi服务进程
+
+3. python3 manage.py runserver #启动Django服务
+
+4. python manage.py makemigrations #迁移数据库
+
+5. python manage.py migrate
+
+5. python manage.py collectstatic #收集静态资源
+
+6. source /www/wwwroot/imnc-wgz.cn/0c6a50fbc0c4c91601f873caff2d3a56_venv/lib/python3.9/venv/scripts/common/activate #切换到虚拟环境
+
+7. uwsgi --ini uwsgi.ini #启动uwsgi服务
+
+8. uwsgi --reload /opt/myapp/myapp.pid #重启uwsgi服务
+
+9. uwsgi --stop /opt/myapp/myapp.pid  #关闭uwsgi服务
+
+
+DEBUG = True  # 开发模式为True，实际生产False
+ALLOWED_HOSTS = []  # 开发模式为*，实际生产为真实IP或域名
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
